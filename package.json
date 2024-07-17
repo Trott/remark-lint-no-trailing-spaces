@@ -3,10 +3,22 @@
   "version": "2.0.1",
   "author": "@verekia",
   "contributors": [
-    "@evilebottnawi"
+    {
+      "name": "@evilebottnawi"
+    },
+    {
+      "name": "@Trott"
+    }
   ],
-  "repository": "https://github.com/verekia/remark-lint-no-trailing-spaces",
-  "bugs": "https://github.com/verekia/remark-lint-no-trailing-spaces/issues",
+  "main": "index.js",
+  "homepage": "https://github.com/Trott/remark-lint-no-trailing-spaces#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trott/remark-lint-no-trailing-spaces.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Trott/remark-lint-no-trailing-spaces/issues"
+  },
   "description": "remark-lint rule to warn when lines end with trailing spaces",
   "keywords": [
     "remark",
