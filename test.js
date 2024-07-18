@@ -52,9 +52,14 @@ const invalidWindows = invalidMixed.replace(linEol, winEol);
             const output = remark().use(linter).processSync(sampleText);
 
             t.equal(output.messages.length, 3);
-            t.deepEqual(output.messages[0].place, {start : {line: 1, column: 48}, end: {line: 1, column: 49}});
-            t.deepEqual(output.messages[1].place, {start : {line: 2, column: 25}, end: {line: 2, column: 26}});
-            t.deepEqual(output.messages[2].place, {start : {line: 4, column: 1}, end: {line: 4, column: 2}});
+
+            const places = output.messages.map(message => { return {
+                start: { line: message.place.start.line, column: message.place.start.column },
+                end: { line: message.place.end.line, column: message.place.end.column },
+            }});
+            t.deepEqual(places[0], { start : {line: 1, column: 48}, end: {line: 1, column: 49 }});
+            t.deepEqual(places[1], { start : {line: 2, column: 25}, end: {line: 2, column: 26 }});
+            t.deepEqual(places[2], { start : {line: 4, column: 1}, end: {line: 4, column: 2 }});
             t.end();
         }
     )

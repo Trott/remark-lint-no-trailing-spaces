@@ -31,7 +31,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "unified-lint-rule": "^3.0.0"
+    "unified-lint-rule": "^3.0.0",
+    "vfile-location": "^5.0.3"
   },
   "scripts": {
     "start": "remark .",
