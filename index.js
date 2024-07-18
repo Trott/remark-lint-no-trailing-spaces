@@ -15,10 +15,11 @@ function noTrailingSpaces(ast, file) {
   for (let i = 0; i < lines.length; i++) {
     const currentLine = lines[i];
     const lineIndex = i + 1;
-    if (/\s$/.test(currentLine)) {
+    const match = /\s+$/.exec(currentLine);
+    if (match) {
       file.message('Remove trailing whitespace', {
-        start: { line: lineIndex, column: currentLine.length + 1 },
-        end: { line: lineIndex }
+        start: { line: lineIndex, column: match.index+1 },
+        end: { line: lineIndex, column: currentLine.length+1 },
       });
     }
   }

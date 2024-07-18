@@ -34,7 +34,7 @@ const validWindows = validMixed.replace(linEol, winEol);
 const invalidMixed =
 `The first line is bearing trailing whitespaces.\t${linEol}` +
 `The second line as well. ${linEol}` +
-`The third line is corrrect.${winEol}` +
+`The third line is correct.${winEol}` +
 `\v${linEol}`
 
 const invalidLinux = invalidMixed.replace(winEol, linEol);
@@ -52,10 +52,9 @@ const invalidWindows = invalidMixed.replace(linEol, winEol);
             const output = remark().use(linter).processSync(sampleText);
 
             t.equal(output.messages.length, 3);
-            output.messages.forEach(m => {
-                t.equal(typeof m.line, 'number');
-                t.notEqual(m.line,3);
-            })
+            t.deepEqual(output.messages[0].place, {start : {line: 1, column: 48}, end: {line: 1, column: 49}});
+            t.deepEqual(output.messages[1].place, {start : {line: 2, column: 25}, end: {line: 2, column: 26}});
+            t.deepEqual(output.messages[2].place, {start : {line: 4, column: 1}, end: {line: 4, column: 2}});
             t.end();
         }
     )
