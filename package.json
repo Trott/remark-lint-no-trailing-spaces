@@ -1,6 +1,7 @@
 {
   "name": "remark-lint-no-trailing-spaces",
   "version": "2.0.1",
+  "type": "module",
   "author": "@verekia",
   "contributors": [
     {
@@ -30,14 +31,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "unified-lint-rule": "^1.0.2"
+    "unified-lint-rule": "^2.1.2"
   },
   "scripts": {
     "start": "remark .",
-    "test": "jest"
+    "test": "node test.js"
   },
   "devDependencies": {
-    "jest": "^29.7.0",
-    "remark-cli": "^9.0.0"
+    "remark-cli": "^10.0.1",
+    "tape": "^5.8.1"
   }
 }
