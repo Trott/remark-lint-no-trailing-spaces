@@ -53,6 +53,7 @@ const invalidWindows = invalidMixed.replace(linEol, winEol);
 
             t.equal(output.messages.length, 3);
             output.messages.forEach(m => {
+                t.equal(typeof m.line, 'number');
                 t.notEqual(m.line,3);
             })
             t.end();
