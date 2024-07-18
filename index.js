@@ -1,8 +1,9 @@
 'use strict';
 
-var rule = require('unified-lint-rule');
+import { lintRule } from 'unified-lint-rule'
 
-module.exports = rule('remark-lint:no-trailing-spaces', noTrailingSpaces);
+const rule = lintRule('remark-lint:no-trailing-spaces', noTrailingSpaces)
+export default rule
 
 /**
  * Lines that are just space characters are not present in
