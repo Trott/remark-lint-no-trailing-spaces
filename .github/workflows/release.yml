@@ -9,6 +9,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+  id-token: write
 jobs:
   release:
     name: Release
@@ -28,6 +29,5 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx --package semantic-release --package @semantic-release/git --package @semantic-release/changelog semantic-release
+        run: npx semantic-release
 
