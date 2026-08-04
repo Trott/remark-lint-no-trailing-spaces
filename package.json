@@ -39,7 +39,7 @@
     "test": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 node test.js"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/changelog": "^7.0.0",
     "@semantic-release/git": "^10.0.1",
     "c8": "^12.0.0",
     "remark-cli": "^12.0.1",
